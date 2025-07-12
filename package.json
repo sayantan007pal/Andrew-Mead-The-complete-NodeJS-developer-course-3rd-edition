@@ -15,5 +15,8 @@
     "url": "https://github.com/sayantan007pal/Andrew-Mead-The-complete-NodeJS-developer-course-3rd-edition/issues"
   },
   "homepage": "https://github.com/sayantan007pal/Andrew-Mead-The-complete-NodeJS-developer-course-3rd-edition#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "chalk": "^5.4.1"
+  }
 }

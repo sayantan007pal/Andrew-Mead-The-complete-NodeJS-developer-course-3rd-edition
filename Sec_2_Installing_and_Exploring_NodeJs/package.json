@@ -1,0 +1,16 @@
+{
+  "name": "sec_2_installing_and_exploring_nodejs",
+  "version": "1.0.0",
+  "main": "_6_why_should_i_use_nodeJs.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chalk": "^5.4.1"
+  }
+}
