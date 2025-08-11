@@ -1,6 +1,9 @@
-const fs = require('fs') // loading the fs module from node js
+require('./utils')
 
-fs.writeFileSync('notes.txt', "My Name is sayantan")
+const name = "sayantan"
 
-
-fs.appendFileSync('notes.txt', "I'm a software engineer")
+console.log(name)
+/*
+utils.js is running
+sayantan
+ */
