@@ -1,9 +1,9 @@
-require('./utils')
+const add = require('./utils')
 
-const name = "sayantan"
 
-console.log(name)
+
+console.log(add(1,2))
 /*
 utils.js is running
-sayantan
+3
  */
