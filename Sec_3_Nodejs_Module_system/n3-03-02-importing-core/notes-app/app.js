@@ -1,7 +1,7 @@
 const add = require('./utils')
 
-const validator = require('validator')
 
+const chalk = require('chalk')
 const getNotes = require('./notes')
 
 console.log(add(1,2))
@@ -11,5 +11,7 @@ utils.js is running
  */
 
 console.log(getNotes())
-console.log(validator.isEmail("sayantan@gmail.com"))
-console.log(validator.isURL("https://www.google.com"))
+console.log(chalk.blue("Hello world!"))
+console.log(chalk.bold.blue("Hello world!"))
+console.log(chalk.blue.bold("Hello world!"))
+console.log(chalk.green.bold.inverse("Hello world!"))
