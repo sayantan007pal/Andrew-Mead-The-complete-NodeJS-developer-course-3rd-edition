@@ -1,25 +1,62 @@
 const fs = require('fs') // Importing the file system module
 
-const dataBuffer = fs.readFileSync('1-json.json') // Reading the JSON file synchronously
+// -->Challange : 
+// 1.Load and Parse JSON data
+// 2.Change the name and age property using your info
+// 3.Stringify the changed object and overwrite the original JSON file
+// 4. Test your work by logging the updated object
+
+
+/* 
+Done by me
+*/
+
+
+// const loadData = JSON.parse(fs.readFileSync('1-json.json')) // loaded the data and parsed the data
+// console.log(loadData) // Logging the loaded data
+// loadData.name = 'Samriddhi Pal'
+// loadData.year = 2005
+// console.log(loadData) // Logging the updated data
+// console.log(JSON.stringify(loadData)) // Logging the updated data in string format
+
+
+
+/**
+ * ☁  playground [main] ⚡  node ./1-json.js
+{ name: 'Sayantan Pal', planet: 'Earth', year: 2023 }
+{ name: 'Samriddhi Pal', planet: 'Earth', year: 2005 }
+{"name":"Samriddhi Pal","planet":"Earth","year":2005}
+ */
+
+
+
+
+/* 
+Done by course
+*/
+
+
+
+const dataBuffer = fs.readFileSync('1-json.json')
 console.log(dataBuffer) // Logging the buffer data
+const dataJSON = dataBuffer.toString()
+console.log(dataJSON) // Logging the string data
+const user = JSON.parse(dataJSON)
+console.log(user)
 
-const dataJSON = dataBuffer.toString() // Converting buffer to string
-console.log(dataJSON) // Logging the JSON string
+user.name = 'Samriddhi Pal'
+user.year = 2005
 
+const userJSON = JSON.stringify(user)
+console.log(userJSON)
+fs.writeFileSync('1-json.json', userJSON)
 
-const book = JSON.parse(dataJSON) // Parsing JSON string to object
-console.log(book)
-console.log(book.title)
-console.log(book.author)
-console.log(book.year)
 
 
 /*
 ☁  playground [main] ⚡  node ./1-json.js
-<Buffer 7b 22 74 69 74 6c 65 22 3a 22 45 67 6f 20 69 73 20 74 68 65 20 45 6e 65 6d 79 22 2c 22 61 75 74 68 6f 72 22 3a 22 52 79 61 6e 20 48 6f 6c 69 64 61 79 ... 14 more bytes>
-{"title":"Ego is the Enemy","author":"Ryan Holiday","year":2016}
-{ title: 'Ego is the Enemy', author: 'Ryan Holiday', year: 2016 }
-Ego is the Enemy
-Ryan Holiday
-2016
+<Buffer 7b 22 6e 61 6d 65 22 3a 22 53 61 79 61 6e 74 61 6e 20 50 61 6c 22 2c 22 70 6c 61 6e 65 74 22 3a 22 45 61 72 74 68 22 2c 22 79 65 61 72 22 3a 32 30 32 ... 2 more bytes>
+{"name":"Sayantan Pal","planet":"Earth","year":2023}
+{ name: 'Sayantan Pal', planet: 'Earth', year: 2023 }
+{"name":"Samriddhi Pal","planet":"Earth","year":2005}
 */
