@@ -24,15 +24,10 @@ yargs.command({
 })
 yargs.parse()
 
+
 /*
-☁  notes-app [main] ⚡  node app.js add --title="this is my title" --body="this is my body"
-TITLE: this is my title
-BODY: this is my body
-*/
-
-
-/**
 ☁  notes-app [main] ⚡  node app.js add --title="NEW Title" --body="NEW body"
-TITLE: NEW Title
-BODY: NEW body
- */
+Note title taken!
+☁  notes-app [main] ⚡  node app.js add --title="NEW Title not a duplicate" --body="NEW body not a duplicate"
+Note added successfully!
+*/
