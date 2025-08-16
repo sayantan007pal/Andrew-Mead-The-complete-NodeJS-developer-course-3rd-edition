@@ -1,4 +1,4 @@
-
+const notes = require('./notes.js')
 const yargs = require('yargs')
 
 //Crete add command
@@ -18,8 +18,7 @@ yargs.command({
     }
   },
   handler : function (argv){
-    console.log('TITLE: '+ argv.title)
-    console.log('BODY: '+ argv.body)
+    notes.addNotes(argv.title, argv.body)
   }
 
 })
