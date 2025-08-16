@@ -29,3 +29,10 @@ yargs.parse()
 TITLE: this is my title
 BODY: this is my body
 */
+
+
+/**
+☁  notes-app [main] ⚡  node app.js add --title="NEW Title" --body="NEW body"
+TITLE: NEW Title
+BODY: NEW body
+ */
