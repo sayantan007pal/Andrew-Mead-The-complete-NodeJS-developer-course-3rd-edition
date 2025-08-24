@@ -1,13 +1,19 @@
+//
+// Goal: Create method to get incomplete tasks
+//
+// 1. Define getTasksToDo method
+// 2. Use filter to to return just the incompleted tasks (arrow function)
+// 3. Test your work by running the script
+
 const fs = require('fs')
-const getnotes = function(){
+const getnotes = () => {
     return "Your notes..."
 }
 
-const addNotes = function(title,body){
+
+const addNotes = (title,body) => {
     const notes = loadNotes()
-    const duplicateNotes = notes.filter(function(notes){
-        return notes.title === title
-    })
+    const duplicateNotes = notes.filter((notes) => notes.title === title)
     if(duplicateNotes.length === 0){
     notes.push({             
         title: title,
@@ -25,7 +31,7 @@ const addNotes = function(title,body){
 const removeNote = function(title){
     // console.log('Removing note with title: ' + title)
     const notes = loadNotes()
-    const filterNotesToKeep = notes.filter(function(notes){
+    const filterNotesToKeep = notes.filter((notes) => {
 
         return notes.title !== title
     })
@@ -39,12 +45,12 @@ const removeNote = function(title){
     saveNotes(filterNotesToKeep)
 }
 
-const saveNotes = function(notes){
+const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes)
     fs.writeFileSync('notes.json', dataJSON)
 }
 
-const loadNotes = function(){
+const loadNotes = () => {
     try{
         const loadBuffer = fs.readFileSync('notes.json')
         const dataJSON = loadBuffer.toString()
