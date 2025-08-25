@@ -46,6 +46,16 @@ yargs.command({
   }
 })
 
+yargs.command({
+  command: 'list',
+  description: 'List all Notes',
+  handler(argv)  {
+    notes.listNotes()
+  }
+})
+
+
+
 yargs.parse()
 
 
@@ -64,4 +74,15 @@ Note not found with title: NEW Title not a duplicate
 Note added successfully!
 ☁  notes-app [main] ⚡  node app.js add --title="NEW Title" --body="NEW body"                                
 Note added successfully!
+*/
+
+
+
+
+/*
+☁  notes-app [main] ⚡  node app.js list                                     
+Your Notes
+undefined
+NEW Title not a duplicate
+NEW Title
 */

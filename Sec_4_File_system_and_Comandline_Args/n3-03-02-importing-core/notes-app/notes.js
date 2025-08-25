@@ -1,10 +1,13 @@
 //
-// Goal: Create method to get incomplete tasks
+// Goal: To wireup List command
 //
-// 1. Define getTasksToDo method
-// 2. Use filter to to return just the incompleted tasks (arrow function)
+// 1. Create and export listNotes from notes.js
+// - "Your Notes" using chalk
+// - Print note title for each note 
+// 2. Call listNotes from command handler
 // 3. Test your work by running the script
 
+const chalk = require('chalk')
 const fs = require('fs')
 const getnotes = () => {
     return "Your notes..."
@@ -59,9 +62,16 @@ const loadNotes = () => {
         return []
     }
 }
-
+const listNotes = ()=>{
+    const note = loadNotes()
+    console.log(chalk.inverse('Your Notes'))
+    note.forEach((note) => {
+        console.log(note.title)
+    })
+}
 module.exports = {
     getnotes: getnotes,
     addNotes: addNotes,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 }
