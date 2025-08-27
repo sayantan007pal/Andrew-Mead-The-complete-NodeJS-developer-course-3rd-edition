@@ -1,21 +1,9 @@
-//the below code shows the asynchronous nature of JavaScript
-console.log('Weather App started')
+const request = require('request');
 
-setTimeout(() => {
-    console.log('Fetching weather data...')
-}, 2000)
+const url = 'https://api.weatherstack.com/current?access_key=d559e719faab07310756a2f1c6c6967d&query=Kolkata';
 
-setTimeout(() => {
-    console.log('Weather data fetched successfully!')
-}, 0)
-
-console.log('Weather App finished') 
-
-
-/*
-☁  weather-app [main] ⚡  node app.js
-Weather App started
-Weather App finished
-Fetching weather data...
-Weather data fetched successfully!
-*/
+request({url:url}, (error,response)=> {
+    const data = JSON.parse(response.body);
+    console.log("whole response : ",data)
+    console.log("Current :", data.current)
+})
